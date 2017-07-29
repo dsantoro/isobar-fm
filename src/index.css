@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto",sans-serif;
+}
+
+.flex {
+
+  display: -webkit-box;
+  display: -ms-flexbox; 
+  display: -webkit-flex;
+  display: flex;
+}
+
+.align-center {
+
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.align-end {
+
+  -webkit-align-items: flex-end;
+  -moz-align-items: flex-end;
+  -ms-align-items: flex-end;
+  align-items: flex-end;
+}
+
+.fit-form {
+
+  margin: 0;
+  position: relative;
+}
+
+.fit-form input[type="search"] {
+
+  margin-bottom: 0;
+  border-radius: 4px;
+}
+
+.fit-form button {
+
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  margin: 0;
+  top: 5px;
+  right: 5px;
+  background: url(./images/search.png) no-repeat center;
+  background-size: contain;
+  padding: 0;
+}
+
+figure {
+
+  margin: 0;
+}
+
+header {
+
+  padding: 6px 0;
+  background-color: #f04d22;
+}
+
+.container {
+
+  width: 100%;
+  padding: 40px 0;
+}
+
+.list-bands {
+
+  list-style: none;
+  margin: 0;
+}
+
+.list-bands > li:not(:last-child) {
+
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.each-block img {
+
+  border-radius: 50%;
+}
+
+.each-block h6,
+.each-block h2 {
+
+  font-family: "Roboto",sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0;
+
+  font-size: 20px;
+}
+
+.each-block h6 {
+
+  font-family: "Roboto",sans-serif;
+  font-size: 14px;
+  color: #999999;
+}
+
+.some-infos {
+
+  widows: 100%;
+  background-color: #e6e6e6;
+  padding: 10px 0;
+}
+
+
+.centered {
+
+  margin: 15px auto;
+  display: block
+}
