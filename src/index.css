@@ -66,6 +66,7 @@ header {
   top: 0;
   left: 0;
   background-color: #f04d22;
+  z-index: 1000;
 }
 
 .container {
@@ -113,7 +114,7 @@ header {
 
 .some-infos {
 
-  margin-top: 40px;
+  margin-top: 50px;
   widows: 100%;
   background-color: #e6e6e6;
   padding: 10px 0;
