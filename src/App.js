@@ -100,7 +100,7 @@ class App extends Component {
             <section className="some-infos">
                 <div className="row">
                     <div className="small-9 columns">
-                        {`${this.state.numResults} results founded`}
+                        {`${this.state.numResults} results found`}
                     </div>
                     <div className="small-3 columns">
 
