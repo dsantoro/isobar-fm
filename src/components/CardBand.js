@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import notFoundImage from './../images/no_results.png';
 
 class CardBand extends Component {
 
@@ -10,7 +9,7 @@ class CardBand extends Component {
                 <div className="row flex align-end">
 
                     <div className="small-3 columns">
-                        <img src={ this.props.image } onerror={ notFoundImage } alt=""/>
+                        <img src={ this.props.image } alt=""/>
                     </div>
                     <div className="small-9 columns">
                         <h2>{ this.props.name }</h2>
