@@ -5,6 +5,7 @@ import axios from 'axios';
 
 import SearchForm from './components/SearchForm';
 import CardBand from './components/CardBand';
+import Loader from './components/Loader';
 
 class App extends Component {
 
@@ -15,7 +16,8 @@ class App extends Component {
             bands: [],
             cache: [],
             numResults: 0,
-            hasResults: true
+            hasResults: true,
+            isLoading: false
         }
 
         this.onChangeTerm = this.onChangeTerm.bind(this)
@@ -38,7 +40,8 @@ class App extends Component {
             this.setState({
                 bands: data,
                 cache: data,
-                numResults: data.length
+                numResults: data.length,
+                isLoading: true
             })
         })
     }
@@ -103,11 +106,6 @@ class App extends Component {
                         {`${this.state.numResults} results found`}
                     </div>
                     <div className="small-3 columns">
-
-                        {/* <button onClick={this.onChangeFilter} className="change-filter"></button>
-                        <ul className="filter-options">
-                            <li><a href="#"></a></li>
-                        </ul> */}
                     </div>
                 </div>
             </section>
@@ -115,26 +113,30 @@ class App extends Component {
 
                 <div className="row">
                     <div className="small-12 columns">
-                        {this.state.hasResults 
-                        ?
-                            <ul className="list-bands small-block-grid-1 medium-block-grid-2 large-block-grid-2">
-                                {this.state.bands.map((band) => {
-                                    return(
-                                        <li key={band.id} className="each-block">
-                                            <CardBand
-                                                name={band.name}
-                                                image={band.image}
-                                                numPlays={band.numPlays}
-                                            />
-                                        </li>
-                                    )
-                                })}
-                            </ul> 
+                        {this.state.isLoading ? 
+                            this.state.hasResults 
+                            ?
+                                <ul className="list-bands small-block-grid-1 medium-block-grid-2 large-block-grid-2">
+                                    {this.state.bands.map((band) => {
+                                        return(
+                                            <li key={band.id} className="each-block">
+                                                <CardBand
+                                                    name={band.name}
+                                                    image={band.image}
+                                                    numPlays={band.numPlays}
+                                                />
+                                            </li>
+                                        )
+                                    })}
+                                </ul> 
+                            :
+                                <div>
+                                    <p className="text-center">No matchs found. Returning in 3 seconds!</p>
+                                    <img src={ notFoundImage } className="centered" alt=""/>
+                                </div>
+                            
                         :
-                            <div>
-                                <p className="text-center">No matchs found. Returning in 3 seconds!</p>
-                                <img src={ notFoundImage } className="centered" alt=""/>
-                            </div>
+                        <Loader />
                         }
                     </div>
                 </div>
